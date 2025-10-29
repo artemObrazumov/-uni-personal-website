@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Проекты</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <h2>Образумов Артём Александрович</h2>
+            <h3>Студент ЭФБО-02-24</h3>
+          </div>
+          <nav class="site-navigation">
+            <ul>
+              <li><a href="../index.html">Главная</a></li>
+              <li><a href="projects.html">Проекты</a></li>
+              <li><a href="diary.html">Дневник</a></li>
+              <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <h2>Мои проекты</h2>
+
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">Все</button>
+          <button class="filter-btn" data-filter="html">HTML/CSS</button>
+          <button class="filter-btn" data-filter="js">JavaScript</button>
+          <button class="filter-btn" data-filter="react">React</button>
+          <button class="filter-btn" data-filter="bootstrap">Bootstrap</button>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card html css js" data-modal="modal1">
+            <div class="project-image">
+              <img src="../images/project1.png" alt="Личный сайт" />
+            </div>
+            <div class="project-info">
+              <h3>Личный сайт</h3>
+              <div class="tech-tags">
+                <span class="tech-tag html">HTML</span>
+                <span class="tech-tag css">CSS</span>
+                <span class="tech-tag js">JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card js" data-modal="modal2">
+            <div class="project-image">
+              <img src="../images/project2.png" alt="Todo-приложение" />
+            </div>
+            <div class="project-info">
+              <h3>Todo-приложение</h3>
+              <div class="tech-tags">
+                <span class="tech-tag js">JavaScript</span>
+                <span class="tech-tag webstorage">LocalStorage</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card react js node mongodb" data-modal="modal3">
+            <div class="project-image">
+              <img src="../images/project3.png" alt="Интернет-магазин" />
+            </div>
+            <div class="project-info">
+              <h3>Интернет-магазин</h3>
+              <div class="tech-tags">
+                <span class="tech-tag react">React</span>
+                <span class="tech-tag node">Node.js</span>
+                <span class="tech-tag mongodb">MongoDB</span>
+                <span class="tech-tag js">JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card bootstrap html css" data-modal="modal4">
+            <div class="project-image">
+              <img src="../images/project4.png" alt="Портфолио Bootstrap" />
+            </div>
+            <div class="project-info">
+              <h3>Портфолио Bootstrap</h3>
+              <div class="tech-tags">
+                <span class="tech-tag bootstrap">Bootstrap</span>
+                <span class="tech-tag html">HTML</span>
+                <span class="tech-tag css">CSS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Портфолио. Все права защищены.</p>
+        <div class="contacts-list">
+          <a
+            href="https://github.com/artemObrazumov"
+            class="contact-item contact-item-github"
+          >
+            <img
+              src="https://pngset.com/images/github-logo-label-text-stencil-transparent-png-2425200.png"
+              class="contact-item-logo"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img src="../images/project1.png" alt="Личный сайт" />
+          </div>
+          <div class="modal-info">
+            <h2>Личный сайт</h2>
+            <p class="modal-description">
+              Создание персонального веб-сайта с использованием современных
+              технологий HTML5 и CSS3
+            </p>
+            <div class="modal-tech">
+              <strong>Технологии:</strong>
+              <div class="tech-tags">
+                <span class="tech-tag html">HTML</span>
+                <span class="tech-tag css">CSS</span>
+                <span class="tech-tag js">JavaScript</span>
+              </div>
+            </div>
+            <div class="modal-links">
+              <a
+                href="view-source"
+                class="btn"
+                >Исходный код</a
+              >
+              <a
+                href="view-online"
+                class="btn btn-secondary"
+                >Посмотреть онлайн</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img src="../images/project2.png" alt="Todo-приложение" />
+          </div>
+          <div class="modal-info">
+            <h2>Todo-приложение</h2>
+            <p class="modal-description">
+              Интерактивное приложение для управления задачами с возможностью
+              добавления, удаления и отметки выполненных задач
+            </p>
+            <div class="modal-tech">
+              <strong>Технологии:</strong>
+              <div class="tech-tags">
+                <span class="tech-tag js">JavaScript</span>
+                <span class="tech-tag webstorage">LocalStorage</span>
+                <span class="tech-tag css">CSS</span>
+              </div>
+            </div>
+            <div class="modal-links">
+              <a
+                href="view-source"
+                class="btn"
+                >Исходный код</a
+              >
+              <a
+                href="view-online"
+                class="btn btn-secondary"
+                >Посмотреть онлайн</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img src="../images/project3.png" alt="Интернет-магазин" />
+          </div>
+          <div class="modal-info">
+            <h2>Интернет-магазин</h2>
+            <p class="modal-description">
+              Полнофункциональный интернет-магазин с корзиной покупок и системой
+              фильтрации товаров
+            </p>
+            <div class="modal-tech">
+              <strong>Технологии:</strong>
+              <div class="tech-tags">
+                <span class="tech-tag react">React</span>
+                <span class="tech-tag node">Node.js</span>
+                <span class="tech-tag mongodb">MongoDB</span>
+                <span class="tech-tag js">JavaScript</span>
+              </div>
+            </div>
+            <div class="modal-links">
+              <a
+                href="view-source"
+                class="btn"
+                >Исходный код</a
+              >
+              <a
+                href="view-online"
+                class="btn btn-secondary"
+                >Посмотреть онлайн</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img src="../images/project4.png" alt="Портфолио Bootstrap" />
+          </div>
+          <div class="modal-info">
+            <h2>Портфолио Bootstrap</h2>
+            <p class="modal-description">
+              Адаптивный сайт-портфолио созданный с использованием фреймворка
+              Bootstrap 5
+            </p>
+            <div class="modal-tech">
+              <strong>Технологии:</strong>
+              <div class="tech-tags">
+                <span class="tech-tag bootstrap">Bootstrap</span>
+                <span class="tech-tag html">HTML</span>
+                <span class="tech-tag css">CSS</span>
+                <span class="tech-tag js">JavaScript</span>
+              </div>
+            </div>
+            <div class="modal-links">
+              <a
+                href="view-source"
+                class="btn"
+                >Исходный код</a
+              >
+              <a
+                href="view-online"
+                class="btn btn-secondary"
+                >Посмотреть онлайн</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../scripts/filters.js"></script>
+    <script src="../scripts/project-modals.js"></script>
+  </body>
+</html>
