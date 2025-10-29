@@ -359,6 +359,10 @@ main {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
+#addEntryModal .modal-content {
+    padding: 36px;
+}
+
 .close {
     position: absolute;
     right: 20px;
@@ -490,6 +494,13 @@ main {
 .status-in-progress {
     background: #fff3cd;
     color: #856404;
+}
+
+#entryStatus {
+    width: 100%;
+    padding: 12px;
+    outline: none;
+    cursor: pointer;
 }
 
 /* Форма контактов */
@@ -636,6 +647,14 @@ footer {
 
 /* Адаптивность */
 @media (max-width: 768px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
     .header-content {
         flex-direction: column;
         gap: 1rem;
@@ -691,5 +710,21 @@ footer {
     
     .projects-grid, .projects-grid.columns-3 {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .site-navigation > ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .site-navigation > ul > li {
+        margin-left: 0;
+    }
+    .entry-header {
+        flex-direction: column;
+    }
+
+    #addEntryModal .modal-content {
+        padding: 12px;
     }
 }
