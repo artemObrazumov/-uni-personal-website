@@ -2,11 +2,15 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewportfit=cover"
+    />
     <title>Главная</title>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#info">Перейти к основному содержимому</a>
     <header>
       <div class="container">
         <div class="header-content">
@@ -27,16 +31,27 @@
     </header>
 
     <main class="container">
-      <section class="hero">
+      <section class="hero" id="info">
         <div class="hero-content">
-          <div class="photo-container"><img src="images/photo.jpeg"></div>
+          <div class="photo-container">
+            <picture>
+              <source srcset="images/photo.webp" type="image/webp">
+              <source srcset="images/photo.jpeg" type="image/jpeg">
+              <source srcset="images/photo-400.jpg" type="image/jpeg">
+              <img
+                class="information__avatar"
+                src="images/photo.jpeg"
+                loading="lazy"
+              />
+            </picture>
+          </div>
           <div class="hero-text">
             <h3>Привет! Я студент Образумов Артём Александрович</h3>
             <p>
-              Факультет ИТ, группа ЭФБО-02-24<br/>
+              Факультет ИТ, группа ЭФБО-02-24<br />
               Увлекаюсь веб-разработкой и мобильной разработкой
             </p>
-            <a href="assets/resume.pdf" class="btn">Скачать резюме</a>
+            <a href="assets/resume.pdf" class="btn"><span class="visually-hidden">Ссылка для скачивания резюме</span>Скачать резюме</a>
           </div>
         </div>
       </section>
@@ -88,7 +103,12 @@
         <div class="projects-grid columns-3">
           <div class="project-card">
             <div class="project-image">
-                <img src="images/project1.png">
+              <picture>
+                <source srcset="images/project1.webp" type="image/webp">
+                <source srcset="images/project1.jpg" type="image/jpeg">
+                <source srcset="images/project1-400.jpg" type="image/jpeg">
+                <img src="images/project1.jpg" loading="lazy" />
+              </picture>
             </div>
             <div class="project-info">
               <h3>Личный сайт</h3>
@@ -97,7 +117,12 @@
           </div>
           <div class="project-card">
             <div class="project-image">
-                <img src="images/project2.png">
+              <picture>
+                <source srcset="images/project2.webp" type="image/webp">
+                <source srcset="images/project2.jpg" type="image/jpeg">
+                <source srcset="images/project2-400.jpg" type="image/jpeg">
+                <img src="images/project2.jpg" loading="lazy" />
+              </picture>
             </div>
             <div class="project-info">
               <h3>Todo-приложение</h3>
@@ -106,7 +131,12 @@
           </div>
           <div class="project-card">
             <div class="project-image">
-                <img src="images/project3.png">
+              <picture>
+                <source srcset="images/project3.webp" type="image/webp">
+                <source srcset="images/project3.jpg" type="image/jpeg">
+                <source srcset="images/project3-400.jpg" type="image/jpeg">
+                <img src="images/project3.jpg" loading="lazy" />
+              </picture>
             </div>
             <div class="project-info">
               <h3>Интернет-магазин</h3>
@@ -121,9 +151,21 @@
       <div class="container">
         <p>&copy; 2025 Портфолио. Все права защищены.</p>
         <div class="contacts-list">
-            <a href="https://github.com/artemObrazumov" class="contact-item contact-item-github">
-                <img src="https://pngset.com/images/github-logo-label-text-stencil-transparent-png-2425200.png" class="contact-item-logo">
-            </a>
+          <a
+            href="https://github.com/artemObrazumov"
+            class="contact-item contact-item-github"
+          >
+            <span class="visually-hidden">Ссылка на GitHub</span>
+            <picture>
+              <source srcset="images/github-logo.webp" type="image/webp">
+              <source srcset="images/github-logo.jpg" type="image/jpeg">
+              <source srcset="images/github-logo-200.jpg" type="image/jpeg">
+              <img
+                src="images/github-logo.jpg"
+                class="contact-item-logo"
+              />
+            </picture>
+          </a>
         </div>
       </div>
     </footer>

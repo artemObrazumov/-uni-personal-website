@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles/styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#projects">Перейти к основному содержимому</a>
     <header>
       <div class="container">
         <div class="header-content">
@@ -27,21 +28,30 @@
     </header>
 
     <main class="container">
-      <section class="section">
+      <section class="section" id="projects">
         <h2>Мои проекты</h2>
 
         <div class="filters">
-          <button class="filter-btn active" data-filter="all">Все</button>
-          <button class="filter-btn" data-filter="html">HTML/CSS</button>
-          <button class="filter-btn" data-filter="js">JavaScript</button>
-          <button class="filter-btn" data-filter="react">React</button>
-          <button class="filter-btn" data-filter="bootstrap">Bootstrap</button>
+          <button class="filter-btn active" data-filter="all"><span class="visually-hidden">Фильтр</span>Все</button>
+          <button class="filter-btn" data-filter="html"><span class="visually-hidden">Фильтр</span>HTML/CSS</button>
+          <button class="filter-btn" data-filter="js"><span class="visually-hidden">Фильтр</span>JavaScript</button>
+          <button class="filter-btn" data-filter="react"><span class="visually-hidden">Фильтр</span>React</button>
+          <button class="filter-btn" data-filter="bootstrap"><span class="visually-hidden">Фильтр</span>Bootstrap</button>
         </div>
 
         <div class="projects-grid">
           <div class="project-card html css js" data-modal="modal1">
             <div class="project-image">
-              <img src="../images/project1.png" alt="Личный сайт" />
+              <picture>
+                <source srcset="../images/project1.webp" type="image/webp">
+                <source srcset="../images/project1.png" type="image/png">
+                <source srcset="../images/project1-400.png" type="image/png">
+                <img
+                  src="../images/project1.png"
+                  alt="Личный сайт"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div class="project-info">
               <h3>Личный сайт</h3>
@@ -50,12 +60,22 @@
                 <span class="tech-tag css">CSS</span>
                 <span class="tech-tag js">JavaScript</span>
               </div>
+              <button class="visually-hidden">Проект: Личный сайт</button>
             </div>
           </div>
 
           <div class="project-card js" data-modal="modal2">
             <div class="project-image">
-              <img src="../images/project2.png" alt="Todo-приложение" />
+              <picture>
+                <source srcset="../images/project2.webp" type="image/webp">
+                <source srcset="../images/project2.png" type="image/png">
+                <source srcset="../images/project2-400.png" type="image/png">
+                <img
+                  src="../images/project2.png"
+                  alt="Todo-приложение"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div class="project-info">
               <h3>Todo-приложение</h3>
@@ -64,11 +84,21 @@
                 <span class="tech-tag webstorage">LocalStorage</span>
               </div>
             </div>
+            <button class="visually-hidden">Проект: Todo-приложение</button>
           </div>
 
           <div class="project-card react js node mongodb" data-modal="modal3">
             <div class="project-image">
-              <img src="../images/project3.png" alt="Интернет-магазин" />
+              <picture>
+                <source srcset="../images/project3.webp" type="image/webp">
+                <source srcset="../images/project3.png" type="image/png">
+                <source srcset="../images/project3-400.png" type="image/png">
+                <img
+                  src="../images/project3.png"
+                  alt="Интернет-магазин"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div class="project-info">
               <h3>Интернет-магазин</h3>
@@ -78,12 +108,22 @@
                 <span class="tech-tag mongodb">MongoDB</span>
                 <span class="tech-tag js">JavaScript</span>
               </div>
+              <button class="visually-hidden">Проект: Интернет-магазин</button>
             </div>
           </div>
 
           <div class="project-card bootstrap html css" data-modal="modal4">
             <div class="project-image">
-              <img src="../images/project4.png" alt="Портфолио Bootstrap" />
+              <picture>
+                <source srcset="../images/project4.webp" type="image/webp">
+                <source srcset="../images/project4.png" type="image/png">
+                <source srcset="../images/project4-400.png" type="image/png">
+                <img
+                  src="../images/project4.png"
+                  alt="Портфолио Bootstrap"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div class="project-info">
               <h3>Портфолио Bootstrap</h3>
@@ -93,6 +133,7 @@
                 <span class="tech-tag css">CSS</span>
               </div>
             </div>
+            <button class="visually-hidden">Проект: Портфолио Bootstrap</button>
           </div>
         </div>
       </section>
@@ -106,10 +147,17 @@
             href="https://github.com/artemObrazumov"
             class="contact-item contact-item-github"
           >
-            <img
-              src="https://pngset.com/images/github-logo-label-text-stencil-transparent-png-2425200.png"
-              class="contact-item-logo"
-            />
+            <span class="visually-hidden">Ссылка на GitHub</span>
+            <picture>
+              <source srcset="../images/github-logo.webp" type="image/webp">
+              <source srcset="../images/github-logo.jpg" type="image/jpeg">
+              <source srcset="../images/github-logo-400.jpg" type="image/jpeg">
+              <img
+                src="../images/github-logo.jpg"
+                class="contact-item-logo"
+                loading="lazy"
+              />
+            </picture>
           </a>
         </div>
       </div>
@@ -117,10 +165,19 @@
 
     <div id="modal1" class="modal">
       <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close">&times;<span class="visually-hidden">Закрыть окно</span></span>
         <div class="modal-body">
           <div class="modal-image">
-            <img src="../images/project1.png" alt="Личный сайт" />
+            <picture>
+              <source srcset="../images/project1.webp" type="image/webp">
+              <source srcset="../images/project1.png" type="image/png">
+              <source srcset="../images/project1-400.png" type="image/png">
+              <img
+                src="../images/project1.png"
+                alt="Личный сайт"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <div class="modal-info">
             <h2>Личный сайт</h2>
@@ -137,16 +194,8 @@
               </div>
             </div>
             <div class="modal-links">
-              <a
-                href="view-source"
-                class="btn"
-                >Исходный код</a
-              >
-              <a
-                href="view-online"
-                class="btn btn-secondary"
-                >Посмотреть онлайн</a
-              >
+              <a href="view-source" class="btn">Исходный код</a>
+              <a href="view-online" class="btn btn-secondary">Посмотреть онлайн</a>
             </div>
           </div>
         </div>
@@ -155,10 +204,19 @@
 
     <div id="modal2" class="modal">
       <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close">&times;<span class="visually-hidden">Закрыть окно</span></span>
         <div class="modal-body">
           <div class="modal-image">
-            <img src="../images/project2.png" alt="Todo-приложение" />
+            <picture>
+              <source srcset="../images/project2.webp" type="image/webp">
+              <source srcset="../images/project2.png" type="image/png">
+              <source srcset="../images/project2-400.png" type="image/png">
+              <img
+                src="../images/project2.png"
+                alt="Todo-приложение"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <div class="modal-info">
             <h2>Todo-приложение</h2>
@@ -175,14 +233,8 @@
               </div>
             </div>
             <div class="modal-links">
-              <a
-                href="view-source"
-                class="btn"
-                >Исходный код</a
-              >
-              <a
-                href="view-online"
-                class="btn btn-secondary"
+              <a href="view-source" class="btn">Исходный код</a>
+              <a href="view-online" class="btn btn-secondary"
                 >Посмотреть онлайн</a
               >
             </div>
@@ -193,10 +245,19 @@
 
     <div id="modal3" class="modal">
       <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close">&times;<span class="visually-hidden">Закрыть окно</span></span>
         <div class="modal-body">
           <div class="modal-image">
-            <img src="../images/project3.png" alt="Интернет-магазин" />
+            <picture>
+              <source srcset="../images/project3.webp" type="image/webp">
+              <source srcset="../images/project3.png" type="image/png">
+              <source srcset="../images/project3-400.png" type="image/png">
+              <img
+                src="../images/project3.png"
+                alt="Интернет-магазин"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <div class="modal-info">
             <h2>Интернет-магазин</h2>
@@ -214,14 +275,8 @@
               </div>
             </div>
             <div class="modal-links">
-              <a
-                href="view-source"
-                class="btn"
-                >Исходный код</a
-              >
-              <a
-                href="view-online"
-                class="btn btn-secondary"
+              <a href="view-source" class="btn">Исходный код</a>
+              <a href="view-online" class="btn btn-secondary"
                 >Посмотреть онлайн</a
               >
             </div>
@@ -232,10 +287,19 @@
 
     <div id="modal4" class="modal">
       <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close">&times;<span class="visually-hidden">Закрыть окно</span></span>
         <div class="modal-body">
           <div class="modal-image">
-            <img src="../images/project4.png" alt="Портфолио Bootstrap" />
+            <picture>
+              <source srcset="../images/project4.webp" type="image/webp">
+              <source srcset="../images/project4.png" type="image/png">
+              <source srcset="../images/project4-400.png" type="image/png">
+              <img
+                src="../images/project4.png"
+                alt="Портфолио Bootstrap"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <div class="modal-info">
             <h2>Портфолио Bootstrap</h2>
@@ -253,14 +317,8 @@
               </div>
             </div>
             <div class="modal-links">
-              <a
-                href="view-source"
-                class="btn"
-                >Исходный код</a
-              >
-              <a
-                href="view-online"
-                class="btn btn-secondary"
+              <a href="view-source" class="btn">Исходный код</a>
+              <a href="view-online" class="btn btn-secondary"
                 >Посмотреть онлайн</a
               >
             </div>

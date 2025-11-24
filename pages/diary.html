@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles/styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#diary">Перейти к основному содержимому</a>
     <header>
       <div class="container">
         <div class="header-content">
@@ -27,7 +28,7 @@
     </header>
 
     <main class="container">
-      <section class="section">
+      <section class="section" id="diary">
         <h2>Мой учебный прогресс</h2>
 
         <div class="diary-entries">
@@ -133,10 +134,17 @@
             href="https://github.com/artemObrazumov"
             class="contact-item contact-item-github"
           >
-            <img
-              src="https://pngset.com/images/github-logo-label-text-stencil-transparent-png-2425200.png"
-              class="contact-item-logo"
-            />
+            <span class="visually-hidden">Ссылка на GitHub</span>
+            <picture>
+              <source srcset="../images/github-logo.webp" type="image/webp">
+              <source srcset="../images/github-logo.jpg" type="image/jpeg">
+              <source srcset="../images/github-logo-400.jpg" type="image/jpeg">
+              <img
+                src="../images/github-logo.jpg"
+                class="contact-item-logo"
+                loading="lazy"
+              />
+            </picture>
           </a>
         </div>
       </div>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles/styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#contacts">Перейти к основному содержимому</a>
     <header>
       <div class="container">
         <div class="header-content">
@@ -27,7 +28,7 @@
     </header>
 
     <main class="container">
-      <section class="section">
+      <section class="section" id="contacts">
         <h2>Свяжитесь со мной</h2>
 
         <div class="contact-form">
@@ -50,10 +51,12 @@
               <span class="error-message" id="messageError"></span>
             </div>
 
-            <button type="submit" class="btn" disabled>Отправить сообщение</button>
+            <button type="submit" class="btn" disabled>
+              Отправить сообщение
+            </button>
           </form>
 
-           <div id="formMessages"></div>
+          <div id="formMessages"></div>
 
           <div class="contact-info">
             <h3>Контакты</h3>
@@ -69,9 +72,22 @@
       <div class="container">
         <p>&copy; 2025 Портфолио. Все права защищены.</p>
         <div class="contacts-list">
-            <a href="https://github.com/artemObrazumov" class="contact-item contact-item-github">
-                <img src="https://pngset.com/images/github-logo-label-text-stencil-transparent-png-2425200.png" class="contact-item-logo">
-            </a>
+          <a
+            href="https://github.com/artemObrazumov"
+            class="contact-item contact-item-github"
+            >
+            <span class="visually-hidden">Ссылка на GitHub</span>
+            <picture>
+              <source srcset="../images/github-logo.webp" type="image/webp">
+              <source srcset="../images/github-logo.jpg" type="image/jpeg">
+              <source srcset="../images/github-logo-400.jpg" type="image/jpeg">
+              <img
+                src="../images/github-logo.jpg"
+                loading="lazy"
+                class="contact-item-logo"
+              />
+            </picture>
+          </a>
         </div>
       </div>
     </footer>
