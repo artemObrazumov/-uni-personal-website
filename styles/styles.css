@@ -213,7 +213,7 @@ main {
 
 .btn:hover,
 .btn:focus {
-  background: #2980b9;
+  background: #124ea4;
   outline: none;
 }
 
@@ -597,7 +597,6 @@ main {
   cursor: pointer;
   border: 2px solid #ddd;
   border-radius: 5px;
-  background: white;
 }
 
 #entryStatus:focus {

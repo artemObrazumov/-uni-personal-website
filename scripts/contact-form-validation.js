@@ -7,32 +7,51 @@ document.addEventListener('DOMContentLoaded', function() {
     const nameError = document.getElementById('nameError');
     const emailError = document.getElementById('emailError');
     const messageError = document.getElementById('messageError');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const nameRegex = /^[a-zA-Zа-яА-ЯёЁ\s\-]{2,50}$/;
-    
+
+    formMessages.setAttribute('aria-live', 'polite');
+    formMessages.setAttribute('role', 'status');
+
     function showMessage(text, type) {
         const existingMessages = formMessages.querySelectorAll('.message');
         existingMessages.forEach(msg => msg.remove());
+        
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${type}`;
         messageDiv.textContent = text;
+        messageDiv.setAttribute('role', 'alert');
         formMessages.appendChild(messageDiv);
+
+        if (type === 'success') {
+            formMessages.setAttribute('aria-live', 'assertive');
+        }
     }
     
     function showFieldError(field, errorElement, message) {
         field.classList.add('error');
         field.classList.remove('success');
+        field.setAttribute('aria-invalid', 'true');
+        field.setAttribute('aria-describedby', errorElement.id);
         errorElement.textContent = message;
+        errorElement.setAttribute('role', 'alert');
     }
     
     function clearFieldError(field, errorElement) {
         field.classList.remove('error');
+        field.classList.remove('success');
+        field.setAttribute('aria-invalid', 'false');
+        field.removeAttribute('aria-describedby');
         errorElement.textContent = '';
+        errorElement.removeAttribute('role');
     }
     
     function markFieldSuccess(field) {
         field.classList.add('success');
         field.classList.remove('error');
+        field.setAttribute('aria-invalid', 'false');
     }
     
     function validateName() {
@@ -102,24 +121,34 @@ document.addEventListener('DOMContentLoaded', function() {
         return isNameValid && isEmailValid && isMessageValid;
     }
     
+    function updateSubmitButton() {
+        const allFieldsFilled = nameInput.value.trim() && 
+                              emailInput.value.trim() && 
+                              messageInput.value.trim();
+        
+        if (allFieldsFilled) {
+            submitBtn.disabled = false;
+            submitBtn.setAttribute('aria-describedby', 'submitReady');
+        } else {
+            submitBtn.disabled = true;
+            submitBtn.setAttribute('aria-describedby', 'submitHelp');
+        }
+    }
+    
     function clearForm() {
         contactForm.reset();
         
         [nameInput, emailInput, messageInput].forEach(field => {
             field.classList.remove('error', 'success');
+            field.setAttribute('aria-invalid', 'false');
         });
         
         [nameError, emailError, messageError].forEach(errorElement => {
             errorElement.textContent = '';
+            errorElement.removeAttribute('role');
         });
-    }
-    
-    function submitForm() {
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.disabled = false;
-        submitBtn.classList.remove('loading');
-        submitBtn.textContent = originalText;
+        
+        updateSubmitButton();
     }
     
     nameInput.addEventListener('blur', validateName);
@@ -127,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (this.value.trim()) {
             clearFieldError(nameInput, nameError);
         }
+        updateSubmitButton();
     });
     
     emailInput.addEventListener('blur', validateEmail);
@@ -134,6 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (this.value.trim()) {
             clearFieldError(emailInput, emailError);
         }
+        updateSubmitButton();
     });
     
     messageInput.addEventListener('blur', validateMessage);
@@ -141,24 +172,44 @@ document.addEventListener('DOMContentLoaded', function() {
         if (this.value.trim()) {
             clearFieldError(messageInput, messageError);
         }
+        updateSubmitButton();
     });
     
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        showMessage('Сообщение отправлено!', 'success');
-        clearForm();
-    });
-    
-    contactForm.addEventListener('input', function() {
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const allFieldsFilled = nameInput.value.trim() && 
-                              emailInput.value.trim() && 
-                              messageInput.value.trim();
         
-        if (allFieldsFilled) {
-            submitBtn.disabled = false;
-        } else {
+        if (validateForm()) {
             submitBtn.disabled = true;
+            submitBtn.classList.add('loading');
+            submitBtn.textContent = 'Отправка...';
+            
+            setTimeout(function() {
+                showMessage('Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.', 'success');
+                clearForm();
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('loading');
+                submitBtn.textContent = 'Отправить сообщение';
+                
+                contactForm.querySelector('fieldset').setAttribute('aria-disabled', 'true');
+                setTimeout(() => {
+                    contactForm.querySelector('fieldset').removeAttribute('aria-disabled');
+                }, 100);
+                
+            }, 1500);
+        } else {
+            showMessage('Пожалуйста, исправьте ошибки в форме', 'error');
+            const firstErrorField = contactForm.querySelector('[aria-invalid="true"]');
+            if (firstErrorField) {
+                firstErrorField.focus();
+            }
         }
     });
+
+    contactForm.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && e.target.type !== 'textarea') {
+            e.preventDefault();
+        }
+    });
+
+    updateSubmitButton();
 });
