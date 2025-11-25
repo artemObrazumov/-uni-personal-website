@@ -12,13 +12,13 @@
       <div class="container">
         <div class="header-content">
           <div class="logo">
-            <h2>Образумов Артём Александрович</h2>
-            <h3>Студент ЭФБО-02-24</h3>
+            <h1>Образумов Артём Александрович</h1>
+            <p class="logo-subtitle">Студент ЭФБО-02-24</p>
           </div>
-          <nav class="site-navigation">
+          <nav class="site-navigation" aria-label="Основная навигация">
             <ul>
               <li><a href="../index.html">Главная</a></li>
-              <li><a href="projects.html">Проекты</a></li>
+              <li><a href="projects.html" aria-current="page">Проекты</a></li>
               <li><a href="diary.html">Дневник</a></li>
               <li><a href="contacts.html">Контакты</a></li>
             </ul>
@@ -28,19 +28,29 @@
     </header>
 
     <main class="container">
-      <section class="section" id="projects">
-        <h2>Мои проекты</h2>
+      <section class="section" id="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Мои проекты</h2>
 
-        <div class="filters">
-          <button class="filter-btn active" data-filter="all"><span class="visually-hidden">Фильтр</span>Все</button>
-          <button class="filter-btn" data-filter="html"><span class="visually-hidden">Фильтр</span>HTML/CSS</button>
-          <button class="filter-btn" data-filter="js"><span class="visually-hidden">Фильтр</span>JavaScript</button>
-          <button class="filter-btn" data-filter="react"><span class="visually-hidden">Фильтр</span>React</button>
-          <button class="filter-btn" data-filter="bootstrap"><span class="visually-hidden">Фильтр</span>Bootstrap</button>
+        <div class="filters" role="group" aria-label="Фильтры проектов">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">
+            <span class="visually-hidden">Показать все проекты</span>Все
+          </button>
+          <button class="filter-btn" data-filter="html" aria-pressed="false">
+            <span class="visually-hidden">Показать проекты по HTML/CSS</span>HTML/CSS
+          </button>
+          <button class="filter-btn" data-filter="js" aria-pressed="false">
+            <span class="visually-hidden">Показать проекты по JavaScript</span>JavaScript
+          </button>
+          <button class="filter-btn" data-filter="react" aria-pressed="false">
+            <span class="visually-hidden">Показать проекты по React</span>React
+          </button>
+          <button class="filter-btn" data-filter="bootstrap" aria-pressed="false">
+            <span class="visually-hidden">Показать проекты по Bootstrap</span>Bootstrap
+          </button>
         </div>
 
-        <div class="projects-grid">
-          <div class="project-card html css js" data-modal="modal1">
+        <div class="projects-grid" role="list" aria-label="Список проектов">
+          <article class="project-card html css js" data-modal="modal1" role="listitem">
             <div class="project-image">
               <picture>
                 <source srcset="../images/project1.webp" type="image/webp">
@@ -48,7 +58,7 @@
                 <source srcset="../images/project1-400.png" type="image/png">
                 <img
                   src="../images/project1.png"
-                  alt="Личный сайт"
+                  alt="Скриншот личного сайта с современным дизайном"
                   loading="lazy"
                 />
               </picture>
@@ -60,11 +70,13 @@
                 <span class="tech-tag css">CSS</span>
                 <span class="tech-tag js">JavaScript</span>
               </div>
-              <button class="visually-hidden">Проект: Личный сайт</button>
+              <button class="btn project-details-btn " aria-label="Подробнее о проекте Личный сайт">
+                Подробнее
+              </button>
             </div>
-          </div>
+          </article>
 
-          <div class="project-card js" data-modal="modal2">
+          <article class="project-card js" data-modal="modal2" role="listitem">
             <div class="project-image">
               <picture>
                 <source srcset="../images/project2.webp" type="image/webp">
@@ -72,7 +84,7 @@
                 <source srcset="../images/project2-400.png" type="image/png">
                 <img
                   src="../images/project2.png"
-                  alt="Todo-приложение"
+                  alt="Скриншот Todo-приложения с интерфейсом управления задачами"
                   loading="lazy"
                 />
               </picture>
@@ -83,11 +95,13 @@
                 <span class="tech-tag js">JavaScript</span>
                 <span class="tech-tag webstorage">LocalStorage</span>
               </div>
+              <button class="btn project-details-btn" aria-label="Подробнее о проекте Todo-приложение">
+                Подробнее
+              </button>
             </div>
-            <button class="visually-hidden">Проект: Todo-приложение</button>
-          </div>
+          </article>
 
-          <div class="project-card react js node mongodb" data-modal="modal3">
+          <article class="project-card react js node mongodb" data-modal="modal3" role="listitem">
             <div class="project-image">
               <picture>
                 <source srcset="../images/project3.webp" type="image/webp">
@@ -95,7 +109,7 @@
                 <source srcset="../images/project3-400.png" type="image/png">
                 <img
                   src="../images/project3.png"
-                  alt="Интернет-магазин"
+                  alt="Скриншот интернет-магазина с каталогом товаров"
                   loading="lazy"
                 />
               </picture>
@@ -108,11 +122,13 @@
                 <span class="tech-tag mongodb">MongoDB</span>
                 <span class="tech-tag js">JavaScript</span>
               </div>
-              <button class="visually-hidden">Проект: Интернет-магазин</button>
+              <button class="btn project-details-btn" aria-label="Подробнее о проекте Интернет-магазин">
+                Подробнее
+              </button>
             </div>
-          </div>
+          </article>
 
-          <div class="project-card bootstrap html css" data-modal="modal4">
+          <article class="project-card bootstrap html css" data-modal="modal4" role="listitem">
             <div class="project-image">
               <picture>
                 <source srcset="../images/project4.webp" type="image/webp">
@@ -120,7 +136,7 @@
                 <source srcset="../images/project4-400.png" type="image/png">
                 <img
                   src="../images/project4.png"
-                  alt="Портфолио Bootstrap"
+                  alt="Скриншот портфолио созданного на Bootstrap"
                   loading="lazy"
                 />
               </picture>
@@ -132,9 +148,11 @@
                 <span class="tech-tag html">HTML</span>
                 <span class="tech-tag css">CSS</span>
               </div>
+              <button class="btn project-details-btn" aria-label="Подробнее о проекте Портфолио Bootstrap">
+                Подробнее
+              </button>
             </div>
-            <button class="visually-hidden">Проект: Портфолио Bootstrap</button>
-          </div>
+          </article>
         </div>
       </section>
     </main>
@@ -146,6 +164,7 @@
           <a
             href="https://github.com/artemObrazumov"
             class="contact-item contact-item-github"
+            aria-label="GitHub аккаунт"
           >
             <span class="visually-hidden">Ссылка на GitHub</span>
             <picture>
@@ -155,6 +174,7 @@
               <img
                 src="../images/github-logo.jpg"
                 class="contact-item-logo"
+                alt="Лого GitHub"
                 loading="lazy"
               />
             </picture>
@@ -163,9 +183,9 @@
       </div>
     </footer>
 
-    <div id="modal1" class="modal">
+    <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title" aria-hidden="true">
       <div class="modal-content">
-        <span class="close">&times;<span class="visually-hidden">Закрыть окно</span></span>
+        <button class="close" aria-label="Закрыть диалоговое окно">&times;</button>
         <div class="modal-body">
           <div class="modal-image">
             <picture>
@@ -174,16 +194,17 @@
               <source srcset="../images/project1-400.png" type="image/png">
               <img
                 src="../images/project1.png"
-                alt="Личный сайт"
+                alt="Скриншот личного сайта с современным дизайном"
                 loading="lazy"
               />
             </picture>
           </div>
           <div class="modal-info">
-            <h2>Личный сайт</h2>
+            <h2 id="modal1-title">Личный сайт</h2>
             <p class="modal-description">
               Создание персонального веб-сайта с использованием современных
-              технологий HTML5 и CSS3
+              технологий HTML5 и CSS3. Проект включает адаптивный дизайн, 
+              семантическую разметку и оптимизацию для поисковых систем.
             </p>
             <div class="modal-tech">
               <strong>Технологии:</strong>
@@ -194,17 +215,17 @@
               </div>
             </div>
             <div class="modal-links">
-              <a href="view-source" class="btn">Исходный код</a>
-              <a href="view-online" class="btn btn-secondary">Посмотреть онлайн</a>
+              <a href="view-source" class="btn" aria-label="Посмотреть исходный код проекта Личный сайт">Исходный код</a>
+              <a href="view-online" class="btn btn-secondary" aria-label="Посмотреть проект Личный сайт онлайн">Посмотреть онлайн</a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="modal2" class="modal">
+    <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title" aria-hidden="true">
       <div class="modal-content">
-        <span class="close">&times;<span class="visually-hidden">Закрыть окно</span></span>
+        <button class="close" aria-label="Закрыть диалоговое окно">&times;</button>
         <div class="modal-body">
           <div class="modal-image">
             <picture>
@@ -213,16 +234,17 @@
               <source srcset="../images/project2-400.png" type="image/png">
               <img
                 src="../images/project2.png"
-                alt="Todo-приложение"
+                alt="Скриншот Todo-приложения с интерфейсом управления задачами"
                 loading="lazy"
               />
             </picture>
           </div>
           <div class="modal-info">
-            <h2>Todo-приложение</h2>
+            <h2 id="modal2-title">Todo-приложение</h2>
             <p class="modal-description">
               Интерактивное приложение для управления задачами с возможностью
-              добавления, удаления и отметки выполненных задач
+              добавления, удаления и отметки выполненных задач. Реализовано 
+              сохранение данных в LocalStorage.
             </p>
             <div class="modal-tech">
               <strong>Технологии:</strong>
@@ -233,19 +255,17 @@
               </div>
             </div>
             <div class="modal-links">
-              <a href="view-source" class="btn">Исходный код</a>
-              <a href="view-online" class="btn btn-secondary"
-                >Посмотреть онлайн</a
-              >
+              <a href="view-source" class="btn" aria-label="Посмотреть исходный код проекта Todo-приложение">Исходный код</a>
+              <a href="view-online" class="btn btn-secondary" aria-label="Посмотреть проект Todo-приложение онлайн">Посмотреть онлайн</a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="modal3" class="modal">
+    <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title" aria-hidden="true">
       <div class="modal-content">
-        <span class="close">&times;<span class="visually-hidden">Закрыть окно</span></span>
+        <button class="close" aria-label="Закрыть диалоговое окно">&times;</button>
         <div class="modal-body">
           <div class="modal-image">
             <picture>
@@ -254,16 +274,17 @@
               <source srcset="../images/project3-400.png" type="image/png">
               <img
                 src="../images/project3.png"
-                alt="Интернет-магазин"
+                alt="Скриншот интернет-магазина с каталогом товаров"
                 loading="lazy"
               />
             </picture>
           </div>
           <div class="modal-info">
-            <h2>Интернет-магазин</h2>
+            <h2 id="modal3-title">Интернет-магазин</h2>
             <p class="modal-description">
               Полнофункциональный интернет-магазин с корзиной покупок и системой
-              фильтрации товаров
+              фильтрации товаров. Включает панель администратора для управления 
+              товарами и заказами.
             </p>
             <div class="modal-tech">
               <strong>Технологии:</strong>
@@ -275,19 +296,17 @@
               </div>
             </div>
             <div class="modal-links">
-              <a href="view-source" class="btn">Исходный код</a>
-              <a href="view-online" class="btn btn-secondary"
-                >Посмотреть онлайн</a
-              >
+              <a href="view-source" class="btn" aria-label="Посмотреть исходный код проекта Интернет-магазин">Исходный код</a>
+              <a href="view-online" class="btn btn-secondary" aria-label="Посмотреть проект Интернет-магазин онлайн">Посмотреть онлайн</a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="modal4" class="modal">
+    <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal4-title" aria-hidden="true">
       <div class="modal-content">
-        <span class="close">&times;<span class="visually-hidden">Закрыть окно</span></span>
+        <button class="close" aria-label="Закрыть диалоговое окно">&times;</button>
         <div class="modal-body">
           <div class="modal-image">
             <picture>
@@ -296,16 +315,17 @@
               <source srcset="../images/project4-400.png" type="image/png">
               <img
                 src="../images/project4.png"
-                alt="Портфолио Bootstrap"
+                alt="Скриншот портфолио созданного на Bootstrap"
                 loading="lazy"
               />
             </picture>
           </div>
           <div class="modal-info">
-            <h2>Портфолио Bootstrap</h2>
+            <h2 id="modal4-title">Портфолио Bootstrap</h2>
             <p class="modal-description">
               Адаптивный сайт-портфолио созданный с использованием фреймворка
-              Bootstrap 5
+              Bootstrap 5. Включает современные компоненты и оптимизацию 
+              для мобильных устройств.
             </p>
             <div class="modal-tech">
               <strong>Технологии:</strong>
@@ -317,10 +337,8 @@
               </div>
             </div>
             <div class="modal-links">
-              <a href="view-source" class="btn">Исходный код</a>
-              <a href="view-online" class="btn btn-secondary"
-                >Посмотреть онлайн</a
-              >
+              <a href="view-source" class="btn" aria-label="Посмотреть исходный код проекта Портфолио Bootstrap">Исходный код</a>
+              <a href="view-online" class="btn btn-secondary" aria-label="Посмотреть проект Портфолио Bootstrap онлайн">Посмотреть онлайн</a>
             </div>
           </div>
         </div>

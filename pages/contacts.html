@@ -12,15 +12,15 @@
       <div class="container">
         <div class="header-content">
           <div class="logo">
-            <h2>Образумов Артём Александрович</h2>
-            <h3>Студент ЭФБО-02-24</h3>
+            <h1>Образумов Артём Александрович</h1>
+            <p class="logo-subtitle">Студент ЭФБО-02-24</p>
           </div>
-          <nav class="site-navigation">
+          <nav class="site-navigation" aria-label="Основная навигация">
             <ul>
               <li><a href="../index.html">Главная</a></li>
               <li><a href="projects.html">Проекты</a></li>
               <li><a href="diary.html">Дневник</a></li>
-              <li><a href="contacts.html">Контакты</a></li>
+              <li><a href="contacts.html" aria-current="page">Контакты</a></li>
             </ul>
           </nav>
         </div>
@@ -28,41 +28,90 @@
     </header>
 
     <main class="container">
-      <section class="section" id="contacts">
-        <h2>Свяжитесь со мной</h2>
+      <section class="section" id="contacts" aria-labelledby="contacts-heading">
+        <h2 id="contacts-heading">Свяжитесь со мной</h2>
 
         <div class="contact-form">
-          <form id="contactForm">
-            <div class="form-group">
-              <label for="name">Имя:</label>
-              <input type="text" id="name" name="name" required />
-              <span class="error-message" id="nameError"></span>
-            </div>
+          <form id="contactForm" novalidate aria-labelledby="contacts-heading">
+            <fieldset>
+              <legend class="visually-hidden">Форма обратной связи</legend>
+              
+              <div class="form-group">
+                <label for="name">Имя: <span class="required" aria-hidden="true">*</span></label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required 
+                  aria-required="true"
+                  aria-describedby="nameError nameHelp"
+                  autocomplete="name"
+                />
+                <span id="nameHelp" class="visually-hidden">Введите ваше полное имя</span>
+                <span class="error-message" id="nameError" role="alert" aria-live="polite"></span>
+              </div>
 
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required />
-              <span class="error-message" id="emailError"></span>
-            </div>
+              <div class="form-group">
+                <label for="email">Email: <span class="required" aria-hidden="true">*</span></label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  aria-required="true"
+                  aria-describedby="emailError emailHelp"
+                  autocomplete="email"
+                />
+                <span id="emailHelp" class="visually-hidden">Введите ваш адрес электронной почты</span>
+                <span class="error-message" id="emailError" role="alert" aria-live="polite"></span>
+              </div>
 
-            <div class="form-group">
-              <label for="message">Сообщение:</label>
-              <textarea id="message" name="message" required></textarea>
-              <span class="error-message" id="messageError"></span>
-            </div>
+              <div class="form-group">
+                <label for="message">Сообщение: <span class="required" aria-hidden="true">*</span></label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  required 
+                  aria-required="true"
+                  aria-describedby="messageError messageHelp"
+                  rows="5"
+                ></textarea>
+                <span id="messageHelp" class="visually-hidden">Введите текст вашего сообщения</span>
+                <span class="error-message" id="messageError" role="alert" aria-live="polite"></span>
+              </div>
 
-            <button type="submit" class="btn" disabled>
-              Отправить сообщение
-            </button>
+              <button 
+                type="submit" 
+                class="btn" 
+                id="submitBtn"
+                disabled
+                aria-describedby="submitHelp"
+              >
+                Отправить сообщение
+              </button>
+              <span id="submitHelp" class="visually-hidden">Кнопка станет активной после заполнения всех обязательных полей</span>
+            </fieldset>
           </form>
 
-          <div id="formMessages"></div>
+          <div id="formMessages" role="alert" aria-live="polite"></div>
 
-          <div class="contact-info">
-            <h3>Контакты</h3>
-            <p>📧 obrazumov@yandex.ru</p>
-            <p>📱 GitHub: artemObrazumov</p>
-            <p>📍 Россия, Москва</p>
+          <div class="contact-info" aria-labelledby="contact-info-heading">
+            <h3 id="contact-info-heading">Контакты</h3>
+            <p>
+              <span aria-hidden="true">📧</span>
+              <span class="visually-hidden">Электронная почта:</span>
+              obrazumov@yandex.ru
+            </p>
+            <p>
+              <span aria-hidden="true">📱</span>
+              <span class="visually-hidden">GitHub:</span>
+              artemObrazumov
+            </p>
+            <p>
+              <span aria-hidden="true">📍</span>
+              <span class="visually-hidden">Местоположение:</span>
+              Россия, Москва
+            </p>
           </div>
         </div>
       </section>
@@ -75,7 +124,8 @@
           <a
             href="https://github.com/artemObrazumov"
             class="contact-item contact-item-github"
-            >
+            aria-label="GitHub аккаунт"
+          >
             <span class="visually-hidden">Ссылка на GitHub</span>
             <picture>
               <source srcset="../images/github-logo.webp" type="image/webp">
@@ -85,6 +135,7 @@
                 src="../images/github-logo.jpg"
                 loading="lazy"
                 class="contact-item-logo"
+                alt="Лого GitHub"
               />
             </picture>
           </a>

@@ -12,14 +12,14 @@
       <div class="container">
         <div class="header-content">
           <div class="logo">
-            <h2>Образумов Артём Александрович</h2>
-            <h3>Студент ЭФБО-02-24</h3>
+            <h1>Образумов Артём Александрович</h1>
+            <p class="logo-subtitle">Студент ЭФБО-02-24</p>
           </div>
-          <nav class="site-navigation">
+          <nav class="site-navigation" aria-label="Основная навигация">
             <ul>
               <li><a href="../index.html">Главная</a></li>
               <li><a href="projects.html">Проекты</a></li>
-              <li><a href="diary.html">Дневник</a></li>
+              <li><a href="diary.html" aria-current="page">Дневник</a></li>
               <li><a href="contacts.html">Контакты</a></li>
             </ul>
           </nav>
@@ -28,91 +28,91 @@
     </header>
 
     <main class="container">
-      <section class="section" id="diary">
-        <h2>Мой учебный прогресс</h2>
+      <section class="section" id="diary" aria-labelledby="diary-heading">
+        <h2 id="diary-heading">Мой учебный прогресс</h2>
 
-        <div class="diary-entries">
-          <div class="entry">
+        <div class="diary-entries" role="list" aria-label="Записи учебного дневника">
+          <article class="entry" role="listitem">
             <div class="entry-header">
-              <span class="entry-date">15 октября 2025</span>
-              <span class="entry-status status-completed">Завершено ✓</span>
+              <time class="entry-date" datetime="2025-10-15">15 октября 2025</time>
+              <span class="entry-status status-completed" aria-label="Статус: Завершено">Завершено ✓</span>
             </div>
-            <p>Верстка макета сайта</p>
-            <p>
+            <h3 class="entry-title">Верстка макета сайта</h3>
+            <p class="entry-description">
               Изучение семантической верстки, Flexbox и Grid layout. Создание
               адаптивного макета.
             </p>
-          </div>
+          </article>
 
-          <div class="entry">
+          <article class="entry" role="listitem">
             <div class="entry-header">
-              <span class="entry-date">24 декабря 2025</span>
-              <span class="entry-status status-completed">Завершено ✓</span>
+              <time class="entry-date" datetime="2025-12-24">24 декабря 2025</time>
+              <span class="entry-status status-completed" aria-label="Статус: Завершено">Завершено ✓</span>
             </div>
-            <p>JavaScript основы</p>
-            <p>
+            <h3 class="entry-title">JavaScript основы</h3>
+            <p class="entry-description">
               Изучение переменных, функций, объектов и работы с DOM. Создание
               интерактивных элементов.
             </p>
-          </div>
+          </article>
 
-          <div class="entry">
+          <article class="entry" role="listitem">
             <div class="entry-header">
-              <span class="entry-date">15 декабря 2024</span>
-              <span class="entry-status status-in-progress">В процессе ⏳</span>
+              <time class="entry-date" datetime="2024-12-15">15 декабря 2024</time>
+              <span class="entry-status status-in-progress" aria-label="Статус: В процессе">В процессе ⏳</span>
             </div>
-            <p>Работа с формами</p>
-            <p>Валидация форм, обработка событий, отправка данных на сервер.</p>
-          </div>
+            <h3 class="entry-title">Работа с формами</h3>
+            <p class="entry-description">Валидация форм, обработка событий, отправка данных на сервер.</p>
+          </article>
 
-          <div class="entry">
+          <article class="entry" role="listitem">
             <div class="entry-header">
-              <span class="entry-date">25 декабря 2024</span>
-              <span class="entry-status status-in-progress">В процессе ⏳</span>
+              <time class="entry-date" datetime="2024-12-25">25 декабря 2024</time>
+              <span class="entry-status status-in-progress" aria-label="Статус: В процессе">В процессе ⏳</span>
             </div>
-            <p>Адаптивный дизайн</p>
-            <p>
+            <h3 class="entry-title">Адаптивный дизайн</h3>
+            <p class="entry-description">
               Медиа-запросы, mobile-first подход, оптимизация для различных
               устройств.
             </p>
-          </div>
+          </article>
         </div>
       </section>
 
-      <section class="section">
-        <h2>Текущие курсы</h2>
-        <div class="skills-grid">
-          <div class="skill-item">
+      <section class="section" aria-labelledby="courses-heading">
+        <h2 id="courses-heading">Текущие курсы</h2>
+        <div class="skills-grid" role="list" aria-label="Список текущих курсов">
+          <div class="skill-item" role="listitem">
             <div class="skill-info">
               <p class="skill-name">HTML/CSS</p>
-              <div class="progress-bar">
+              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Прогресс изучения HTML/CSS: 90%">
                 <div class="progress" style="width: 90%"></div>
               </div>
               <p class="skill-percent">90%</p>
             </div>
           </div>
-          <div class="skill-item">
+          <div class="skill-item" role="listitem">
             <div class="skill-info">
               <span class="skill-name">JavaScript</span>
-              <div class="progress-bar">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Прогресс изучения JavaScript: 80%">
                 <div class="progress" style="width: 80%"></div>
               </div>
               <span class="skill-percent">80%</span>
             </div>
           </div>
-          <div class="skill-item">
+          <div class="skill-item" role="listitem">
             <div class="skill-info">
               <span class="skill-name">Bootstrap</span>
-              <div class="progress-bar">
+              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Прогресс изучения Bootstrap: 85%">
                 <div class="progress" style="width: 85%"></div>
               </div>
               <span class="skill-percent">85%</span>
             </div>
           </div>
-          <div class="skill-item">
+          <div class="skill-item" role="listitem">
             <div class="skill-info">
               <span class="skill-name">React</span>
-              <div class="progress-bar">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Прогресс изучения React: 60%">
                 <div class="progress" style="width: 60%"></div>
               </div>
               <span class="skill-percent">60%</span>
@@ -121,7 +121,9 @@
         </div>
 
         <div style="text-align: center; margin-top: 2rem">
-          <button class="btn" id="addEntryBtn">Добавить запись</button>
+          <button class="btn" id="addEntryBtn" aria-haspopup="dialog" aria-expanded="false">
+            Добавить запись
+          </button>
         </div>
       </section>
     </main>
@@ -133,6 +135,7 @@
           <a
             href="https://github.com/artemObrazumov"
             class="contact-item contact-item-github"
+            aria-label="GitHub аккаунт"
           >
             <span class="visually-hidden">Ссылка на GitHub</span>
             <picture>
@@ -142,6 +145,7 @@
               <img
                 src="../images/github-logo.jpg"
                 class="contact-item-logo"
+                alt="Лого GitHub"
                 loading="lazy"
               />
             </picture>
@@ -150,18 +154,22 @@
       </div>
     </footer>
 
-    <div id="addEntryModal" class="modal">
+    <div id="addEntryModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
       <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Добавить новую запись</h2>
-        <form id="addEntryForm">
+        <button class="close" aria-label="Закрыть диалоговое окно">&times;</button>
+        <h2 id="modal-title">Добавить новую запись</h2>
+        <form id="addEntryForm" aria-labelledby="modal-title">
           <div class="form-group">
             <label for="entryDate">Дата:</label>
-            <input type="date" id="entryDate" name="entryDate" required />
+            <input type="date" id="entryDate" name="entryDate" required 
+                   aria-required="true" aria-describedby="date-help" />
+            <span id="date-help" class="visually-hidden">Выберите дату записи</span>
           </div>
           <div class="form-group">
             <label for="entryTitle">Название:</label>
-            <input type="text" id="entryTitle" name="entryTitle" required />
+            <input type="text" id="entryTitle" name="entryTitle" required 
+                   aria-required="true" aria-describedby="title-help" />
+            <span id="title-help" class="visually-hidden">Введите название записи</span>
           </div>
           <div class="form-group">
             <label for="entryDescription">Описание:</label>
@@ -169,14 +177,19 @@
               id="entryDescription"
               name="entryDescription"
               required
+              aria-required="true"
+              aria-describedby="description-help"
             ></textarea>
+            <span id="description-help" class="visually-hidden">Введите описание записи</span>
           </div>
           <div class="form-group">
             <label for="entryStatus">Статус:</label>
-            <select id="entryStatus" name="entryStatus" required>
+            <select id="entryStatus" name="entryStatus" required 
+                    aria-required="true" aria-describedby="status-help">
               <option value="in-progress">В процессе</option>
               <option value="completed">Завершено</option>
             </select>
+            <span id="status-help" class="visually-hidden">Выберите статус записи</span>
           </div>
           <button type="submit" class="btn">Добавить запись</button>
         </form>
