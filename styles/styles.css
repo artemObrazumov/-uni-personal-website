@@ -147,7 +147,7 @@ header {
 }
 
 .site-navigation ul li a[aria-current="page"] {
-  background: #3498db;
+  background: #c10000;
   color: white;
 }
 
